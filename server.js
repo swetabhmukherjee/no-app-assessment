@@ -4,7 +4,7 @@ const csvParser = require("csv-parser");
 const mongoose = require("mongoose");
 const app = express();
 const port = 3000;
-const handleCsvUpload = require("./src/csvUpload");
+const { handleCsvUpload, getPaginatedData } = require("./src/csvUpload");
 
 // Database connection setup
 mongoose.connect("mongodb://localhost:27017/noapp", {
@@ -47,6 +47,19 @@ app.post("/upload", upload.single("file"), async (req, res) => {
     res.status(200).json(result);
   } catch (error) {
     return res.status(500).json({ errorMessage: error });
+  }
+});
+
+app.get("/data", async (req, res) => {
+  const page = parseInt(req.query.page) || 1; // Current page, default is 1
+  const pageSize = parseInt(req.query.pageSize) || 10; // Number of records per page, default is 10
+
+  try {
+    const paginatedData = await getPaginatedData(page, pageSize);
+    res.status(200).json(paginatedData);
+  } catch (error) {
+    console.error("Error retrieving data:", error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 

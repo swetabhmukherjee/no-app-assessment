@@ -41,4 +41,29 @@ async function handleCsvUpload(fileBuffer) {
   return { invalidRecords, validRecords };
 }
 
-module.exports = handleCsvUpload;
+async function getPaginatedData(page, pageSize) {
+  try {
+    const totalRecords = await CsvData.countDocuments();
+    const totalPages = Math.ceil(totalRecords / pageSize);
+
+    const paginatedData = await CsvData
+      .find()
+      .skip((page - 1) * pageSize)
+      .limit(pageSize);
+
+    return {
+      totalRecords,
+      totalPages,
+      currentPage: page,
+      pageSize,
+      data: paginatedData,
+    };
+  } catch (error) {
+    throw error;
+  }
+}
+
+module.exports = {
+  getPaginatedData,
+  handleCsvUpload
+};
