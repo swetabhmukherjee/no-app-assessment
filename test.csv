@@ -1,0 +1,5 @@
+name,age,email,address
+Alice,30,alice@example.com,123 Main St, Cityville
+Bob,25,bob@example.com,456 Elm St, Townsville
+Eve,-1,eve@example.com,789 Oak St, Villagetown
+John,28,john@example.com,101 Pine St, Hamletville

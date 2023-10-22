@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "2202c03c-d57c-44bf-bffa-5cfbd83b4685",
+		"name": "NoApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8434225"
+	},
+	"item": [
+		{
+			"name": "CSV Upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/swetabhmukherjee/Desktop/test.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "All Invalid Records",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/swetabhmukherjee/Desktop/test.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "116"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"74-i+dm98K0JVcCvqyWBOGrPxmLkC4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 22 Oct 2023 05:29:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"invalidRecords\": [\n        {\n            \"index\": 1,\n            \"errors\": [\n                \"Invalid age.\"\n            ]\n        },\n        {\n            \"index\": 2,\n            \"errors\": [\n                \"Invalid email.\"\n            ]\n        }\n    ],\n    \"validRecords\": []\n}"
+				},
+				{
+					"name": "All Valid Records",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/swetabhmukherjee/Desktop/test.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "183"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b7-5fFYZHZLp9RQea7y8/Q+znE2CWw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 22 Oct 2023 05:31:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"invalidRecords\": [],\n    \"validRecords\": [\n        {\n            \"name\": \"Alice\",\n            \"age\": 30,\n            \"email\": \"a@example.com\",\n            \"address\": \"123 Main St\"\n        },\n        {\n            \"name\": \"Bob\",\n            \"age\": 25,\n            \"email\": \"b@example.com\",\n            \"address\": \"456 Elm St\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Mixed bag",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/swetabhmukherjee/Desktop/test.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "302"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"12e-Wnfbp9UkTqxuTExYpIWqD1vEzxo\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 22 Oct 2023 05:33:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"invalidRecords\": [\n        {\n            \"index\": 3,\n            \"errors\": [\n                \"Invalid age.\"\n            ]\n        }\n    ],\n    \"validRecords\": [\n        {\n            \"name\": \"Alice\",\n            \"age\": 30,\n            \"email\": \"alice@example.com\",\n            \"address\": \"123 Main St\"\n        },\n        {\n            \"name\": \"Bob\",\n            \"age\": 25,\n            \"email\": \"bob@example.com\",\n            \"address\": \"456 Elm St\"\n        },\n        {\n            \"name\": \"John\",\n            \"age\": 28,\n            \"email\": \"john@example.com\",\n            \"address\": \"101 Pine St\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Root",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get DB data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/data?page=1&pageSize=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"data"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example result",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/data?page=1&pageSize=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"data"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "304"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"130-q7Gxt7Z5w/t4lOg2xc1o2UYyODs\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 22 Oct 2023 05:48:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"totalRecords\": 3,\n    \"totalPages\": 2,\n    \"currentPage\": 1,\n    \"pageSize\": 2,\n    \"data\": [\n        {\n            \"_id\": \"6534b41ab0a4d1a0aa4783b0\",\n            \"name\": \"Alice\",\n            \"age\": 30,\n            \"email\": \"alice@example.com\",\n            \"address\": \"123 Main St\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6534b41ab0a4d1a0aa4783b1\",\n            \"name\": \"Bob\",\n            \"age\": 25,\n            \"email\": \"bob@example.com\",\n            \"address\": \"456 Elm St\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
